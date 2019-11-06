@@ -3,9 +3,10 @@ const express = require('express');
 const app = express();
 const indexRouter = require('./routes/index');
 const authRoute = require('./routes/auth');
+const authGuard = require('./middleware/authGuard');
 app.use(express.json());
 
-app.use('/', indexRouter);
+app.use('/', authGuard.jwt(), indexRouter);
 app.use('/auth', authRoute);
 
 // error 404
