@@ -14,7 +14,11 @@ cd instaaiep-backend
 
 npm i
 
+```
 
+create and configure .env file and create database then run the following commands
+
+```
 knex migrate:latest
 
 knex seed:run
