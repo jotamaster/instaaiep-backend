@@ -1,0 +1,24 @@
+{
+	"name": "instaaiep-backend",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jotamaster/instaaiep-backend.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/jotamaster/instaaiep-backend/issues"
+	},
+	"homepage": "https://github.com/jotamaster/instaaiep-backend#readme",
+	"dependencies": {
+		"express": "^4.17.1"
+	}
+}
