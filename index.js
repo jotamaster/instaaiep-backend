@@ -1,9 +1,19 @@
+require('dotenv').config();
 const express = require('express');
-
 const app = express();
-const port = 5000;
-app.listen(3000);
+const indexRouter = require('./routes/index');
+const authRoute = require('./routes/auth');
+app.use(express.json());
 
-app.get('/', (req, res) => res.send('Hola'));
+app.use('/', indexRouter);
+app.use('/auth', authRoute);
 
-app.listen(port, () => console.log(`API listening on port ${port}`));
+// error 404
+app.use((req, res) => {
+	res.status(404).send({
+		error: 'Not found',
+		path: req.url
+	});
+});
+
+app.listen(process.env.PORT, () => console.log(`API listening on port ${process.env.PORT}`));

@@ -14,5 +14,10 @@ cd instaaiep-backend
 
 npm i
 
+
+knex migrate:latest
+
+knex seed:run
+
 npm run start
 ```
