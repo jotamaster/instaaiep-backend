@@ -6,7 +6,7 @@ exports.seed = (knex) => {
 	return knex(tabaleName).del().then(async () => {
 		let hashPassword = '';
 
-		await bcrypt.hash('password', 10).then((hash) => (hashPassword = hash));
+		await bcrypt.hash('admin', 10 ).then((hash) => hashPassword = hash);
 
 		return knex(tabaleName).insert([
 			{

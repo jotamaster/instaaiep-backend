@@ -1,13 +1,21 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const app = express();
-const indexRouter = require('./routes/index');
-const authRoute = require('./routes/auth');
-const authGuard = require('./middleware/authGuard');
+const routes = require('./routes/index');
+const { Model } = require('objection');
+const knexConfig = require('./knexfile');
+const Knex = require('knex');
+
+app.use('/api/static', express.static(__dirname + '/static'));
+
 app.use(express.json());
 
-app.use('/', authGuard.jwt(), indexRouter);
-app.use('/auth', authRoute);
+const knex = Knex(knexConfig[process.env.NODE_ENV]);
+  
+Model.knex(knex);
+
+routes(app)
 
 // error 404
 app.use((req, res) => {
