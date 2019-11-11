@@ -12,10 +12,10 @@ app.use('/api/static', express.static(__dirname + '/static'));
 app.use(express.json());
 
 const knex = Knex(knexConfig[process.env.NODE_ENV]);
-  
+
 Model.knex(knex);
 
-routes(app)
+routes(app);
 
 // error 404
 app.use((req, res) => {
