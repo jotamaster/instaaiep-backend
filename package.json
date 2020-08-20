@@ -20,7 +20,7 @@
 	},
 	"homepage": "https://github.com/jotamaster/instaaiep-backend#readme",
 	"dependencies": {
-		"bcrypt": "^3.0.6",
+		"bcrypt": "^5.0.0",
 		"dotenv": "^8.0.0",
 		"email-secure": "^2.0.4",
 		"express": "^4.17.1",
